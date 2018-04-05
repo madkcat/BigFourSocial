@@ -645,11 +645,11 @@ class App extends Component {
                   </div>
                   <div>
                     <h3 className='scoreboard'>YELLOW TEAM: {this.state.yellowscore - Math.floor(this.state.yellowfouls / 3)*10}</h3>
-                    <h3 className='scoreboard'>Errors: {this.state.yellowerror}   <button className="foulbutton button" onClick={this.yellowfoul}>Foul</button>: <button className="foulbutton button" onClick={this.yellowfoul}>{this.state.yellowfouls}</button></h3>
+                    <h3 className='scoreboard'>Errors: {this.state.yellowerror}   <button className="foulbutton button" onClick={this.yellowfoul}>Foul</button>: <button className="foulbutton button" onClick={this.yellowunfoul}>{this.state.yellowfouls}</button></h3>
                   </div>
                   <div>
                     <h3 className='scoreboard'>GREEN TEAM: {this.state.greenscore - Math.floor(this.state.greenfouls / 3)*10}</h3>
-                    <h3 className='scoreboard'>Errors: {this.state.greenerror}   <button className="foulbutton button" onClick={this.greenfoul}>Foul</button>: <button className="foulbutton button" onClick={this.greenfoul}>{this.state.greenfouls}</button></h3>
+                    <h3 className='scoreboard'>Errors: {this.state.greenerror}   <button className="foulbutton button" onClick={this.greenfoul}>Foul</button>: <button className="foulbutton button" onClick={this.greenunfoul}>{this.state.greenfouls}</button></h3>
                   </div>
                 </section>
               </div>
