@@ -2,7 +2,7 @@
   "name": "quizpad",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://madkcat.github.io/BigFourSocial",
+  "homepage": "https://madkcat.github.io/BigFourSocial/",
   "dependencies": {
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
