@@ -57,6 +57,7 @@ class App extends Component {
     this.greenunfoul = this.greenunfoul.bind(this);
     this.correctguess = this.correctguess.bind(this);
     this.incorrectguess = this.incorrectguess.bind(this);
+    
   }
   handleChange(e) {
     this.setState({
