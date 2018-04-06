@@ -685,25 +685,22 @@ class App extends Component {
           <div className='wrapper'>
             <p>You must be logged in to see the other stuff and submit to it.</p>
           </div>
-        }
-
-        <div className='container'>
-           
+        }           
           {/* <div>placeholder for "Live" Quizzes. All Visitors to the site will be able to view Current "Live" quizzes, as well as past completed Quizzes.</div> */}
           {/* <img src="DatabaseFlowChart.jpg" alt="databaseflowchart.jpg" /> */}
-
+          <br/>
           <section className='display-score'>
             <div className="wrapper">
               <ul>
                 {this.state.scorecard.map((score) => {
                 return (
-                  <li key={score.id}>
+                  <li className='smallcard' key={score.id}>
                     <h3>{score.title}</h3>
                     <h4>{score.quizzerpad}</h4>
                     <h4>{score.jumptype}</h4>
                     <h4>{score.jresult}</h4>
                       {score.user === this.state.user.displayName || score.user === this.state.user.email ?
-                        <button onClick={() => this.removeItem(score.id)}>{score.user} Remove Score</button> : null}
+                        <button className='xelement' onClick={() => this.removeItem(score.id)}>X</button> : null}
                   </li>
                 )
                 })}
@@ -711,8 +708,7 @@ class App extends Component {
             </div>
           </section>
         </div>
-      </div>
-    );
+      );
   }
 }
 

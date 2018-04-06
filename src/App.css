@@ -44,10 +44,17 @@ header i {
   padding-top: 30px;
 }
 
-.wrapper {
+.wrapper  {
   max-width: 1100px;
   margin: 0 auto;
 }
+
+.smallcard{
+  max-width: 30px;
+  width: 100%;
+  margin: 0 auto;
+}
+
 
 .add-score {
   border-radius: 5px;
@@ -58,12 +65,13 @@ header i {
   min-width: 275px;
   width: 19%;
   margin-right: auto;
-  float:left;
+  float: auto;
 }
 
 .display-score {
   width: 90%;
-  margin-left: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .display-score button {
@@ -496,4 +504,17 @@ h3.scoreboard{
   background-color: red;
   color: #fff;
   font-size: 14px;
+}
+
+button.xelement{
+  border-radius: 2px;
+  min-width: 0px;
+  background-color: red;
+  cursor: pointer;
+  border: 0;
+  min-width: 0px;
+  color: #fff;
+  font-size: 14px;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+  padding: 10px 6px;
 }
