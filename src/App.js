@@ -219,7 +219,7 @@ class App extends Component {
                 yellowerror: temperror +1,
                 yellowout: true
               });
-              if (this.state.rederror >= 3){
+              if (this.state.yellowerror >= 3){
                 this.setState({
                   yellowscore: tempyellow + er
                 })
@@ -237,7 +237,7 @@ class App extends Component {
                 greenerror: temperror +1,
                 greenout: true
               });
-              if (this.state.rederror >= 3){
+              if (this.state.greenerror >= 3){
                 this.setState({
                   greenscore: tempgreen + er
                 })
@@ -274,22 +274,11 @@ class App extends Component {
             break;
             case 'green':
               var tempgreen = this.state.greenscore;
-              var temperror = this.state.greenerror;
               this.setState({
-                greenerror: temperror +1
-              });
-              if (this.state.rederror >= 3){
-                this.setState({
-                  greenscore: tempgreen + er
-                })
-              }
-              else if (this.state.qnumber >= 16){
-                this.setState({
-                  greenscore: tempgreen + er
-                })
-              };
+                greenscore: tempgreen + tc
+              })
             break;
-            }
+          }    
           tempqnumber = this.state.qnumber;
           this.setState({
             qnumber: tempqnumber+1,
@@ -332,7 +321,7 @@ class App extends Component {
                 yellowerror: temperror +1,
                 yellowout: true
               });
-              if (this.state.rederror >= 3){
+              if (this.state.yellowerror >= 3){
                 this.setState({
                   yellowscore: tempyellow + er
                 })
@@ -344,11 +333,22 @@ class App extends Component {
               };
             break;
             case 'green':
-              var tempgreen = this.state.greenscore;
+              var greenyellow = this.state.greenscore;
+              var temperror = this.state.greenerror;
               this.setState({
-                greenscore: tempgreen + fc,
+                greenerror: temperror +1,
                 greenout: true
-              })
+              });
+              if (this.state.greenerror >= 3){
+                this.setState({
+                  greenscore: tempgreen + er
+                })
+              }
+              else if (this.state.qnumber >= 16){
+                this.setState({
+                  greenscore: tempgreen + er
+                })
+              };
             break;
           }
           this.setState({
@@ -483,21 +483,36 @@ class App extends Component {
   }
   redunfoul(){
     const tempfoul = this.state.redfouls;
-    this.setState({
-      redfouls: tempfoul - 1
-    })
+    if (tempfoul === 0){
+      this.setState({})
+    }
+    else (
+      this.setState({
+        redfouls: tempfoul - 1
+      })
+    );
   }
   yellowunfoul(){
     const tempfoul = this.state.yellowfouls;
-    this.setState({
+    if (tempfoul === 0){
+      this.setState({})
+    }
+    else (
+      this.setState({
       yellowfouls: tempfoul - 1
     })
+    );
   }
   greenunfoul(){
     const tempfoul = this.state.greenfouls;
-    this.setState({
+    if (tempfoul === 0){
+      this.setState({})
+    }
+    else (
+      this.setState({
       greenfouls: tempfoul - 1
     })
+    );
   }
   correctguess(){
     this.setState({
@@ -547,7 +562,7 @@ class App extends Component {
             <div>
               <div className='container'>
                 <section className='add-score'>
-                  <h1> Question # {this.state.qnumber}</h1>
+                  
                   <form onSubmit={this.handleSubmit}>
                     <div className="quizzerpad-radio-div">
                       {(this.state.redout === true )?
@@ -640,6 +655,7 @@ class App extends Component {
                   </form>
                 </section>
                 <section className='scoreboard'>
+                  <h1> Question # {this.state.qnumber}</h1>
                   <div>
                     <h3 className='scoreboard'>RED TEAM: {this.state.redscore - Math.floor(this.state.redfouls / 3)*10}</h3>
                     <h3 className='scoreboard'>Errors: {this.state.rederror}   <button className="foulbutton button" onClick={this.redfoul}>Foul</button>: <button className="foulbutton button" onClick={this.redunfoul}> {this.state.redfouls}</button></h3>

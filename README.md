@@ -33,6 +33,7 @@ v.04 - next "update"
 lock out team color when jumping on an error[mvp requirement]
 lacks ability to reduce fouls[mvp requirement]
 doesn't count 3 fouls as an error[mvp requirement]
+do not allow 'negative' fouls'
 
 
 bugs/feedback recieved:
@@ -45,3 +46,4 @@ integrate chat function
 make scoreboard visible to unregistered users[mvp requirement]
 track individual quizzers errors[mvp requirement]
 --required to track quiz out and error our, also global stat rankings
+modify remove button to edit user errors and responsive rollback[mvp requirement]
