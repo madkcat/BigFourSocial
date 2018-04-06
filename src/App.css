@@ -55,7 +55,8 @@ header i {
   background-color: rgb(237, 237, 237);
   padding: 20px;
   box-shadow: 0 3px 4px 0 rgba(0,0,0,.14), 0 3px 3px -2px rgba(0,0,0,.12), 0 1px 8px 0 rgba(0,0,0,.2);
-  width: 20%;
+  min-width: 10%;
+  width: 19%;
   margin-right: auto;
   float:left;
 }
@@ -298,6 +299,7 @@ input:focus + .slider.greenpads {
   background-color: rgb(237, 237, 237);
   padding: 10px;
   box-shadow: 0 3px 4px 0 rgba(0,0,0,.14), 0 3px 3px -2px rgba(0,0,0,.12), 0 1px 8px 0 rgba(0,0,0,.2);
+  min-width: 10%;
   width: 19%;
   margin-right: auto;
   margin-top: 0px;
