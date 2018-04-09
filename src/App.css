@@ -308,12 +308,11 @@ input:focus + .slider.greenpads {
   background-color: rgb(237, 237, 237);
   padding: 10px;
   box-shadow: 0 3px 4px 0 rgba(0,0,0,.14), 0 3px 3px -2px rgba(0,0,0,.12), 0 1px 8px 0 rgba(0,0,0,.2);
-  min-width: 200px;
+  min-width: 295px;
   width: 19%;
   margin-right: auto;
   margin-top: 0px;
   margin-bottom: 0px;
-  float: left;
 }
 .sbl{
   min-width: 180px;
@@ -335,7 +334,7 @@ input:focus + .slider.greenpads {
   box-shadow: 0 0 1px rgba(255, 100, 100);
 }
 .seatnum{
-  width: 45px;
+  width: 99%;
   height: 28px;
 }
 .seatnum.slider::before {

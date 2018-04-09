@@ -9,6 +9,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
+      twoteam: false,
+      hidebutt: false,
       quizzerpad:'',
       qnumber: 1,
       jumptype:'regular',
@@ -60,7 +62,9 @@ class App extends Component {
     this.greenunfoul = this.greenunfoul.bind(this);
     this.correctguess = this.correctguess.bind(this);
     this.incorrectguess = this.incorrectguess.bind(this);
-    
+    this.pass = this.pass.bind(this);
+    this.standard = this.standard.bind(this);
+    this.twoteam = this.twoteam.bind(this);    
   }
   handleChange(e) {
     this.setState({
@@ -537,6 +541,33 @@ class App extends Component {
     })
     console.log(this.state.jresult);
   }
+  pass(){
+    var tempqnumber = this.state.qnumber;
+    this.setState({
+      qnumber: tempqnumber,
+      jresult: false,
+      jumptype: 'regular',
+      wronganswer: false,
+      wronganswer2: false,
+      teamcolor: null,
+      redout: false,
+      yellowout: false,
+      greenout: false,
+      padnum: null,
+      jcolor: ''
+    })
+  }
+  twoteam(){
+    this.setState({
+      twoteam: true,
+      hidebutt: true
+    }) 
+  }
+  standard(){
+    this.setState({
+      hidebutt: true,
+    }) 
+  }
   render() {
     const rStyle = {
       backgroundColor: 'red'
@@ -579,7 +610,13 @@ class App extends Component {
             <div>
               <div className='container'>
                 <section className='add-score'>
-                  
+                  {(this.state.hidebutt === false) ?
+                    <div className='teamqualifier'>
+                      <button className='twobutton' onClick={this.twoteam}>Two-team</button>
+                      <button className='threebutton' onClick={this.standard}>Standard</button>
+                    </div>
+                   :
+                    <div>hidden</div>}
                   <form onSubmit={this.handleSubmit}>
                     <div className="quizzerpad-radio-div">
                       {(this.state.redout === true )?
@@ -597,7 +634,7 @@ class App extends Component {
                           </div>
                         </label>
                       }
-                      {(this.state.yellowout === true )?
+                      {(this.state.yellowout === true || this.state.twoteam === true )?
                         <label className="switch">
                           <div className="quizzerpad-radio">
                             <input type="radio" disabled className="teamcolor yellowpads" id="yellowpad"value="yellow" />
@@ -667,7 +704,7 @@ class App extends Component {
                         <button className='incorrectbutton' onClick={this.incorrectguess}>Incorrect</button>
                       </div>                    
                     :
-                      <p>Missing Pad or Seat Number</p>
+                    <button className='passbutton' onClick={this.pass}>PASS</button>
                     }
                   </form>
                 </section>
@@ -714,11 +751,11 @@ class App extends Component {
                   <li className='smallcard' key={score.id}>
                     <h3>{score.title}</h3>
                     <h4 style={{backgroundColor: score.teamcolor }}>{score.quizzerpad}</h4>
-                    <h4>{score.jumptype}</h4>
+                    <h5>{score.jumptype}</h5>
                     {score.jresult === true ?
                       <h4 style={{backgroundColor: 'green' }}>*</h4>
                     :
-                      <h4 style={{backgroundColor: 'red' }}>*</h4>}
+                      <h4 style={{backgroundColor: 'red' }}>***</h4>}
                     {/* {score.jcolor === 'green' ?
                       <h4 style={{backgroundColor: 'green' }}>***</h4>
                     :<div />} */}
