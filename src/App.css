@@ -50,9 +50,10 @@ header i {
 }
 
 .smallcard{
-  max-width: 30px;
+  max-width: 54px;
   width: 100%;
   margin: 0 auto;
+  float: left;
 }
 
 
@@ -162,7 +163,7 @@ li h3 {
   margin: 0;
   color: #fff;
   font-weight: 300;
-  padding: 15px;
+  padding: 5px;
 }
 
 li h4 {
@@ -509,6 +510,7 @@ h3.scoreboard{
 button.xelement{
   border-radius: 2px;
   min-width: 0px;
+  max-width: 50%;
   background-color: red;
   cursor: pointer;
   border: 0;
