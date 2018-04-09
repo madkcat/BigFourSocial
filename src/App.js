@@ -258,11 +258,16 @@ class App extends Component {
               };
             break;
           }
+          if (this.state.twoteam === true){
+            this.setState ({
+              jumptype:'free'
+          })}
+          else(
           this.setState({
             jumptype: 'tossup',
             wronganswer: true,
             padnum: null
-          })
+          }))
         };
       break;
       case 'tossup': 
@@ -371,7 +376,11 @@ class App extends Component {
         };
       break;
       case 'free':
-        const fc = 10;
+        if(this.state.twoteam === true){
+        var fc = 20}
+        else(
+          fc = 10
+        )
         if(score.jresult === true){
           jcolor = 'green';
           tempqnumber = this.state.qnumber;
