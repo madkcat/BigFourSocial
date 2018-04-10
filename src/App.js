@@ -64,7 +64,8 @@ class App extends Component {
     this.incorrectguess = this.incorrectguess.bind(this);
     this.pass = this.pass.bind(this);
     this.standard = this.standard.bind(this);
-    this.twoteam = this.twoteam.bind(this);    
+    this.twoteam = this.twoteam.bind(this);  
+    this.challengeappeal = this.challengeappeal.bind(this);  
   }
   handleChange(e) {
     this.setState({
@@ -147,8 +148,9 @@ class App extends Component {
     const er = -10;
     var temperror = 0;
     var tempqnumber = '';
-    var jcase = '';
+    // var jcase = '';
     var jcolor = '';
+
     var score = {
       title: this.state.qnumber,
       teamcolor: this.state.teamcolor,
@@ -156,6 +158,19 @@ class App extends Component {
       jumptype: this.state.jumptype,
       jresult: this.state.jresult,
       jcolor: jcolor,
+      openredscore: (this.state.redscore - Math.floor(this.state.redfoul / 3)*10),
+      openyellowscore: (this.state.yellowscore - Math.floor(this.state.yellowfoul / 3)*10),
+      opengreenscore: (this.state.greenscore - Math.floor(this.state.greenfoul / 3)*10),
+      redscore: this.state.redscore,
+      rederror: this.state.rederror,
+      redfoul: this.state.redfouls,
+      yellowscore: this.state.yellowscore,
+      yellowerror: this.state.yellowerror,
+      yellowfoul: this.state.yellowfoul,
+      greenscore: this.state.greenscore,
+      greenerror: this.state.greenerror,
+      greenfoul: this.state.yellowfoul,
+
       user: this.state.user.displayName || this.state.user.email
     }
     console.log(score.jresult)
@@ -204,7 +219,7 @@ class App extends Component {
           jcolor = 'red';
           switch(this.state.teamcolor){
             case 'red':             
-              var tempred = this.state.redscore;
+              tempred = this.state.redscore;
               temperror = this.state.rederror;
               this.setState({  
                 rederror: temperror +1,
@@ -222,7 +237,7 @@ class App extends Component {
               };
             break;
             case 'yellow':
-              var tempyellow = this.state.yellowscore;
+              tempyellow = this.state.yellowscore;
               temperror = this.state.yellowerror;
               this.setState({
                 yellowerror: temperror +1,
@@ -240,7 +255,7 @@ class App extends Component {
               };
             break;
             case 'green':
-              var tempgreen = this.state.greenscore;
+              tempgreen = this.state.greenscore;
               temperror = this.state.greenerror;
               this.setState({
                 greenerror: temperror +1,
@@ -277,19 +292,19 @@ class App extends Component {
           tempqnumber = this.state.qnumber;
           switch(this.state.teamcolor){
             case 'red':             
-              var tempred = this.state.redscore;
+              tempred = this.state.redscore;
               this.setState({
                 redscore: tempred + tc
               })
             break;
             case 'yellow':
-              var tempyellow = this.state.yellowscore;
+              tempyellow = this.state.yellowscore;
               this.setState({
                 yellowscore: tempyellow + tc
               })
             break;
             case 'green':
-              var tempgreen = this.state.greenscore;
+              tempgreen = this.state.greenscore;
               this.setState({
                 greenscore: tempgreen + tc
               })
@@ -313,7 +328,7 @@ class App extends Component {
           jcolor ='red';
           switch(this.state.teamcolor){
             case 'red':             
-              var tempred = this.state.redscore;
+              tempred = this.state.redscore;
               temperror = this.state.rederror;
               this.setState({
                 rederror: temperror +1,
@@ -331,7 +346,7 @@ class App extends Component {
               };
             break;
             case 'yellow':
-              var tempyellow = this.state.yellowscore;
+              tempyellow = this.state.yellowscore;
               temperror = this.state.yellowerror;
               this.setState({
                 yellowerror: temperror +1,
@@ -349,7 +364,7 @@ class App extends Component {
               };
             break;
             case 'green':
-              var greenerror = this.state.greenscore;
+              tempgreen = this.state.greenscore;
               temperror = this.state.greenerror;
               this.setState({
                 greenerror: temperror +1,
@@ -377,28 +392,30 @@ class App extends Component {
       break;
       case 'free':
         if(this.state.twoteam === true){
-        var fc = 20}
+        var fc = 20;
+        var tt = 1}
         else(
-          fc = 10
+          fc = 10,
+          tt= 0
         )
         if(score.jresult === true){
           jcolor = 'green';
           tempqnumber = this.state.qnumber;
           switch(this.state.teamcolor){
             case 'red':             
-              var tempred = this.state.redscore;
+              tempred = this.state.redscore;
               this.setState({
                 redscore: tempred + fc
               })
             break;
             case 'yellow':
-              var tempyellow = this.state.yellowscore;
+              tempyellow = this.state.yellowscore;
               this.setState({
                 yellowscore: tempyellow + fc
               })
             break;
             case 'green':
-              var tempgreen = this.state.greenscore;
+              tempgreen = this.state.greenscore;
               this.setState({
                 greenscore: tempgreen + fc
               })
@@ -416,6 +433,7 @@ class App extends Component {
           })
         };
         this.setState({
+          qnumber: tempqnumber + tt,
           jumptype: 'regular',
           wronganswer: false,
           wronganswer2: false,
@@ -430,6 +448,7 @@ class App extends Component {
     }
   }
   componentDidMount() {
+    
     auth.onAuthStateChanged((user) => {
       if (user) {
         this.setState({ user });
@@ -448,7 +467,10 @@ class App extends Component {
           quizzerpad: scorecard[score].quizzerpad,
           jumptype: scorecard[score].jumptype,
           jresult: scorecard[score].jresult,
-          user: scorecard[score].user
+          user: scorecard[score].user,
+          openredscore: scorecard[score].openredscore,
+          openyellowscore: scorecard[score].openyellowscore,
+          opengreenscore: scorecard[score].opengreenscore
         });
       }
       this.setState({
@@ -475,7 +497,10 @@ class App extends Component {
           quizzerpad: scorecard[score].quizzerpad,
           jumptype: scorecard[score].jumptype,
           jresult: scorecard[score].jresult,
-          user: scorecard[score].user
+          user: scorecard[score].user,
+          openredscore: scorecard[score].openredscore,
+          openyellowscore: scorecard[score].openyellowscore,
+          opengreenscore: scorecard[score].opengreenscore
         });
       }
       this.setState({
@@ -577,13 +602,13 @@ class App extends Component {
       hidebutt: true,
     }) 
   }
+  challengeappeal(){
+    this.setState({
+      twoteam: true,
+      hidebutt: true
+    }) 
+  }
   render() {
-    const rStyle = {
-      backgroundColor: 'red'
-    };
-    const gStyle = {
-      backgroundColor: 'green'
-    };
     return (
       <div className='app'>
         <header>
@@ -720,15 +745,15 @@ class App extends Component {
                 <section className='scoreboard'>
                   <h1> Question # {this.state.qnumber}</h1>
                   <div>
-                    <h3 className='scoreboard sbl'>RED TEAM: {this.state.redscore - Math.floor(this.state.redfouls / 3)*10}</h3>
+                    <h3 className='scoreboard sbl'>RED TEAM: {this.state.redscore - Math.floor(this.state.redfoul / 3)*10}</h3>
                     <h3 className='scoreboard sbl'>Errors: {this.state.rederror}   <button className="foulbutton button" onClick={this.redfoul}>Foul</button>: <button className="foulbutton button" onClick={this.redunfoul}>{this.state.redfouls}</button></h3>
                   </div>
                   <div>
-                    <h3 className='scoreboard sbl'>YELLOW TEAM: {this.state.yellowscore - Math.floor(this.state.yellowfouls / 3)*10}</h3>
+                    <h3 className='scoreboard sbl'>YELLOW TEAM: {this.state.yellowscore - Math.floor(this.state.yellowfoul / 3)*10}</h3>
                     <h3 className='scoreboard sbl'>Errors: {this.state.yellowerror}   <button className="foulbutton button" onClick={this.yellowfoul}>Foul</button>: <button className="foulbutton button" onClick={this.yellowunfoul}>{this.state.yellowfouls}</button></h3>
                   </div>
                   <div>
-                    <h3 className='scoreboard sbl'>GREEN TEAM: {this.state.greenscore - Math.floor(this.state.greenfouls / 3)*10}</h3>
+                    <h3 className='scoreboard sbl'>GREEN TEAM: {this.state.greenscore - Math.floor(this.state.greenfoul / 3)*10}</h3>
                     <h3 className='scoreboard sbl'>Errors: {this.state.greenerror}   <button className="foulbutton button" onClick={this.greenfoul}>Foul</button>: <button className="foulbutton button" onClick={this.greenunfoul}>{this.state.greenfouls}</button></h3>
                   </div>
                 </section>
@@ -765,9 +790,6 @@ class App extends Component {
                       <h4 style={{backgroundColor: 'green' }}>*</h4>
                     :
                       <h4 style={{backgroundColor: 'red' }}>***</h4>}
-                    {/* {score.jcolor === 'green' ?
-                      <h4 style={{backgroundColor: 'green' }}>***</h4>
-                    :<div />} */}
                       {score.user === this.state.user.displayName || score.user === this.state.user.email ?
                         <button className='xelement' onClick={() => this.removeItem(score.id)}>X</button> : null}
                   </li>
