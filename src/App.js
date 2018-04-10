@@ -681,19 +681,19 @@ class App extends Component {
             {this.state.user ?
               <div>
                 <button onClick={this.logout}>Log Out</button> 
-                {(this.state.pageset === 'scorekeeper') ?
-                  <button onClick={this.keepscoreout}>Return</button> 
-                  :
-                  <button onClick={this.keepscorein}>Keep Score</button> 
-                }
-                {(this.state.pageset === 'profile') ?
-                  <button onClick={this.profileout} className="profilebutton"> <img src={this.state.user.photoURL} alt="UserGooglePhoto" /></button>
-                  :
-                  <button onClick={this.profilein} className="profilebutton"> <img src={this.state.user.photoURL} alt="UserGooglePhoto" /></button>
-                }               
+                  {(this.state.pageset === 'scorekeeper') ?
+                    <button onClick={this.keepscoreout}>Return</button> 
+                    :
+                    <button onClick={this.keepscorein}>Keep Score</button> 
+                  }
+                  {(this.state.pageset === 'profile') ?
+                    <button onClick={this.profileout} className="profilebutton"> <img src={this.state.user.photoURL} alt="UserGooglePhoto" /></button>
+                    :
+                    <button onClick={this.profilein} className="profilebutton"> <img src={this.state.user.photoURL} alt="UserGooglePhoto" /></button>
+                  }               
               </div>
-            :
-            <button onClick={this.login}>Log In</button>              
+              :
+              <button onClick={this.login}>Log In</button>              
             }
           </div>
         </header>
@@ -841,27 +841,22 @@ class App extends Component {
           {/* <div>placeholder for "Live" Quizzes. All Visitors to the site will be able to view Current "Live" quizzes, as well as past completed Quizzes.</div> */}
           {/* <img src="DatabaseFlowChart.jpg" alt="databaseflowchart.jpg" /> */}
           <br/>
-          <section className='display-score'>
-            <div className="wrapper">
-              <ul>
-                {this.state.scorecard.map((score) => {
-                return (
-                  <li className='smallcard' key={score.id}>
-                    <h3>{score.title}</h3>
-                    <h4 style={{backgroundColor: score.teamcolor }}>{score.quizzerpad}</h4>
-                    <h5>{score.jumptype}</h5>
-                    {score.jresult === true ?
-                      <h4 style={{backgroundColor: 'green' }}>*</h4>
-                    :
-                      <h4 style={{backgroundColor: 'red' }}>***</h4>}
-                      {score.user === this.state.user.displayName || score.user === this.state.user.email ?
-                        <button className='xelement' onClick={() => this.removeItem(score.id)}>X</button> : null}
-                  </li>
-                )
-                })}
-              </ul>
-            </div>
-          </section>
+          <section className='scoreboard'>
+                  <h1> Question # {this.state.qnumber}</h1>
+                  <div>
+                    <h3 className='scoreboard sbl'>RED TEAM: {this.state.outsetredscore}</h3>
+                    <h3 className='scoreboard sbl'>Errors: {this.state.rederror}   <button className="foulbutton button" onClick={this.redfoul}>Foul</button>: <button className="foulbutton button" onClick={this.redunfoul}>{this.state.redfouls}</button></h3>
+                  </div>
+                  <div>
+                    <h3 className='scoreboard sbl'>YELLOW TEAM: {this.state.outsetyellowscore}</h3>
+                    <h3 className='scoreboard sbl'>Errors: {this.state.yellowerror}   <button className="foulbutton button" onClick={this.yellowfoul}>Foul</button>: <button className="foulbutton button" onClick={this.yellowunfoul}>{this.state.yellowfouls}</button></h3>
+                  </div>
+                  <div>
+                    <h3 className='scoreboard sbl'>GREEN TEAM: {this.state.outsetgreenscore}</h3>
+                    <h3 className='scoreboard sbl'>Errors: {this.state.greenerror}   <button className="foulbutton button" onClick={this.greenfoul}>Foul</button>: <button className="foulbutton button" onClick={this.greenunfoul}>{this.state.greenfouls}</button></h3>
+                  </div>
+                </section>
+
         </div>
       );
   }
