@@ -76,9 +76,11 @@ header i {
 }
 
 .display-score button {
-  margin-top: 20px;
   margin-left: auto;
-  display: block;
+  float: right;
+}
+li.smallcard h3 {
+  height: 40px;
 }
 
 .add-score form {
