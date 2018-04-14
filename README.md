@@ -34,16 +34,21 @@ lock out team color when jumping on an error[mvp requirement]
 lacks ability to reduce fouls[mvp requirement]
 doesn't count 3 fouls as an error[mvp requirement]
 do not allow 'negative' fouls'
-
+clean up scoreboard
 
 bugs/feedback recieved:
 integrate paypal donation button
-scoreboard is too parceled and doesn't look nice
 add number to whitespace in slider, to make it easier to see which seat is jumping
-provide ability to modify individual pushes, incase of opperator error or challange[mvp requirement]
---requires rolling back qnumber and updating scoreboard
 integrate chat function
+
+Requested features
+provide ability to modify individual pushes, incase of opperator error or challenge/appeal[mvp requirement]
+--requires rolling back qnumber and updating scoreboard
 make scoreboard visible to unregistered users[mvp requirement]
 track individual quizzers errors[mvp requirement]
---required to track quiz out and error our, also global stat rankings
 modify remove button to edit user errors and responsive rollback[mvp requirement]
+--required to track quiz out and error our, also global stat rankings
+user profile page[mvp requirement]
+coach page
+church page
+team page[mvp requirement?]

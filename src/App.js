@@ -529,35 +529,35 @@ class App extends Component {
       });      
     });
   }
-  componentDidMountex() {
-    auth.onAuthStateChanged((user) => {
-      if (user) {
-        this.setState({ user });
-      } 
-    });
-    const scoreRef = firebase.database().ref('scoredisplay');
-    scoreRef.on('value', (snapshot) => {
-      let scorecard = snapshot.val();
-      let newState = [];
-      for (let score in scorecard) {
-        newState.push({
-          id: score,
-          title: scorecard[score].title,
-          teamcolor: scorecard[score].teamcolor,
-          quizzerpad: scorecard[score].quizzerpad,
-          jumptype: scorecard[score].jumptype,
-          jresult: scorecard[score].jresult,
-          user: scorecard[score].user,
-          openredscore: scorecard[score].openredscore,
-          openyellowscore: scorecard[score].openyellowscore,
-          opengreenscore: scorecard[score].opengreenscore
-        });
-      }
-      this.setState({
-        scorecard: newState
-      });      
-    });
-  }
+  // componentDidMountex() {
+  //   auth.onAuthStateChanged((user) => {
+  //     if (user) {
+  //       this.setState({ user });
+  //     } 
+  //   });
+  //   const scoreRef = firebase.database().ref('scoredisplay');
+  //   scoreRef.on('value', (snapshot) => {
+  //     let scorecard = snapshot.val();
+  //     let newState = [];
+  //     for (let score in scorecard) {
+  //       newState.push({
+  //         id: score,
+  //         title: scorecard[score].title,
+  //         teamcolor: scorecard[score].teamcolor,
+  //         quizzerpad: scorecard[score].quizzerpad,
+  //         jumptype: scorecard[score].jumptype,
+  //         jresult: scorecard[score].jresult,
+  //         user: scorecard[score].user,
+  //         openredscore: scorecard[score].openredscore,
+  //         openyellowscore: scorecard[score].openyellowscore,
+  //         opengreenscore: scorecard[score].opengreenscore
+  //       });
+  //     }
+  //     this.setState({
+  //       scorecard: newState
+  //     });      
+  //   });
+  // }
   removeItem(scoreID) {
     const scoreRef = firebase.database().ref(`/scorecard/${scoreID}`);
     scoreRef.remove();
@@ -721,7 +721,7 @@ class App extends Component {
       <div className='app'>
         <header>
           <div className="wrapper">
-            <h1>CI Framework V0.3</h1>
+            <h1>CI Framework V0.4</h1>
             {this.state.user ?
               <div>
                 <button onClick={this.logout}>Log Out</button> 
@@ -888,6 +888,15 @@ class App extends Component {
           <section className='scoreboard'>
                   <h1> Question # {this.state.qnumber}</h1>
                   <div>
+                  {this.state.scoreboard.onChange((scoreboard) => {
+                return (
+                  <li className='smallcard'>
+                    <h3>{scoreboard.redscorecall}</h3>
+                    <h3>{scoreboard.yellowscorecall}</h3>
+                    <h3>{scoreboard.greenscorecall}</h3>
+                  </li>
+                )
+                })}
                     <h3 className='scoreboard sbl'>RED TEAM: {this.state.outsetredscore}</h3>
                     <h3 className='scoreboard sbl'>Errors: {this.state.rederror}   <button className="foulbutton button" onClick={this.redfoul}>Foul</button>: <button className="foulbutton button" onClick={this.redunfoul}>{this.state.redfouls}</button></h3>
                   </div>

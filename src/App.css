@@ -79,8 +79,12 @@ header i {
   margin-left: auto;
   float: right;
 }
+.xelement {
+  padding: 0px
+}
+
 li.smallcard h3 {
-  height: 40px;
+  height: 25px;
 }
 
 .add-score form {
@@ -519,5 +523,5 @@ button.xelement{
   color: #fff;
   font-size: 14px;
   box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
-  padding: 10px 6px;
+  padding: 4px 6px 4px 6px;
 }
