@@ -36,17 +36,37 @@ class App extends Component {
       redout: false,
       reddisplay: 0,
       outsetredscore: 0,
+      red1:0,
+      red2:0,
+      red3:0,
+      red4:0,
+      red5:0,
+      red6:0,
+      red7:0,
       yellowscore: 0,
       yellowerror: 0,
       yellowfouls: 0,
       yellowout: false,
       outsetyellowscore: 0,
+      yellow1:0,
+      yellow2:0,
+      yellow3:0,
+      yellow4:0,
+      yellow5:0,
+      yellow6:0,
+      yellow7:0,
       greenscore: 0,
       greenerror: 0,
       greenfouls: 0,
       greenout: false,
       outsetgreenscore: 0,
-
+      green1:0,
+      green2:0,
+      green3:0,
+      green4:0,
+      green5:0,
+      green6:0,
+      green7:0
     }
     this.handleChange = this.handleChange.bind(this);// Currently unused, but saved just in case
     this.handletcOptionChange = this.handletcOptionChange.bind(this); //Handles Team Color Change
@@ -913,40 +933,6 @@ class App extends Component {
                       }
                     </form>
                   </section>
-                  <section className='scoreboard'>
-                    <h1> Question # {this.state.qnumber}</h1>
-                    <div>
-                      <h3 className='scoreboard sbl'>RED TEAM: {(this.state.outsetredscore)} <br />
-                        Errors: {this.state.rederror}   <button className="foulbutton button" onClick={this.redfoul}>Foul</button>: <button className="foulbutton button" onClick={this.redunfoul}>{this.state.redfouls}</button></h3>
-                    </div>
-                    <div>
-                      <h3 className='scoreboard sbl'>YELLOW TEAM: {this.state.outsetyellowscore}<br />
-                        Errors: {this.state.yellowerror}   <button className="foulbutton button" onClick={this.yellowfoul}>Foul</button>: <button className="foulbutton button" onClick={this.yellowunfoul}>{this.state.yellowfouls}</button></h3>
-                    </div>
-                    <div>
-                      <h3 className='scoreboard sbl'>GREEN TEAM: {this.state.outsetgreenscore}<br />
-                        Errors: {this.state.greenerror}   <button className="foulbutton button" onClick={this.greenfoul}>Foul</button>: <button className="foulbutton button" onClick={this.greenunfoul}>{this.state.greenfouls}</button></h3>
-                    </div>
-                  </section>
-                  <section className='display-score'>
-                    <div className="wrapper">
-                      <ul>
-                        {this.state.scorecard.map((score) => {
-                          return (
-                            <li className='smallcard' key={score.id}>
-                              <h3>{score.title}{score.user === this.state.user.displayName || score.user === this.state.user.email ? <button className='xelement' onClick={() => this.removeItem(score.id)}>X</button> : null}</h3>
-                              <h4 style={{ backgroundColor: score.teamcolor }}>{score.quizzerpad}</h4>
-                              <h4>{score.jumptype}</h4>
-                              {score.jresult === true ?
-                                <h4 style={{ backgroundColor: 'green' }}>*</h4>
-                                :
-                                <h4 style={{ backgroundColor: 'red' }}>*</h4>}
-                            </li>
-                          )
-                        })}
-                      </ul>
-                    </div>
-                  </section>
                 </div>
               </div>
             </div>
@@ -991,7 +977,6 @@ class App extends Component {
                     <h3 className='scoreboard sbl'>Errors: {this.state.greenerror}   <button className="foulbutton button" onClick={this.greenfoul}>Foul</button>: <button className="foulbutton button" onClick={this.greenunfoul}>{this.state.greenfouls}</button></h3>
                   </div>
           </section> */}
-        <br />
         <section className='scoreboard'>
           <h1> Question # {this.state.qnumber}</h1>
           <div>
