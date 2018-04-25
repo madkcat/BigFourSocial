@@ -20,6 +20,7 @@ class App extends Component {
       jcolor: '',
       username: '',
       scorecard: [],
+      scoreboard:[],
       user: null,
       authtype: null,
       pageset: null,
@@ -208,9 +209,9 @@ class App extends Component {
       user: this.state.user.displayName || this.state.user.email
     }
     var scoreb = {
-      redscorecall: this.state.outsetredscore,
-      yellowscorecall: this.state.outsetyellowscore,
-      greenscorecall: this.state.outsetgreenscore
+      redscore: this.state.outsetredscore,
+      yellowscore: this.state.outsetyellowscore,
+      greenscore: this.state.outsetgreenscore
     }
     scoreRef.push(score);
     scoreboardRef.push(scoreb);
@@ -578,12 +579,6 @@ class App extends Component {
         })
         break;
     }
-    // console.log(this.state.redscore);
-    // console.log(this.state.yellowscore);
-    // console.log(this.state.greenscore);
-    // this.validateredscore;
-    // this.validateyellowscore;
-    // this.validategreenscore;
   }
 
   componentDidMount() {
@@ -592,6 +587,27 @@ class App extends Component {
         this.setState({ user });
       }
     });
+    // const scoreboardRef = firebase.database().ref('scoreboard');
+    // scoreboardRef.on('value',(snapshot) =>{
+    //   let scoreboard = snapshot.val();
+    //   let newState = [];
+    //   for (let scoreb in scoreboard){
+    //     newState.push({
+    //       redscore: scoreboard[scoreb].redscore,
+    //       yellowscore: scoreboard[scoreb].yellowscore,
+    //       greenscore: scoreboard[scoreb].greenscore          
+    //     });
+    //     this.setState({
+    //       redscore: scoreboard[scoreb].redscore,
+    //       yellowscore: scoreboard[scoreb].yellowscore,
+    //       greenscore: scoreboard[scoreb].greenscore          
+    //     })
+    //   }
+    
+    //   this.setState({
+    //     scoreboard:newState
+    //   })  
+    // })
     const scoreRef = firebase.database().ref('scorecard');
     scoreRef.on('value', (snapshot) => {
       let scorecard = snapshot.val();
@@ -653,6 +669,7 @@ class App extends Component {
     scoreRef.remove();
   }
   redfoul() {
+    const scoreboardRef = firebase.database().ref('scoreboard');
     var tempfoul = this.state.redfouls;
     this.setState({
       redfouls: tempfoul + 1
@@ -663,9 +680,18 @@ class App extends Component {
     this.setState({
       redfoulscore: tempfoulscore
     })
+    var tempscore = this.state.outsetredscore + this.state.redfoulscore;
+    this.setState({
+      redscore:tempscore
+    })
+    var scoreb = {
+      redscore: tempscore
+    }
+    scoreboardRef.push(scoreb);
   }
 
   yellowfoul() {
+    const scoreboardRef = firebase.database().ref('scoreboard');
     var tempfoul = this.state.yellowfouls;
     this.setState({
       yellowfouls: tempfoul + 1
@@ -676,9 +702,18 @@ class App extends Component {
     this.setState({
       yellowfoulscore: tempfoulscore
     })
+    var tempscore = this.state.outsetyellowscore + this.state.yellowfoulscore;
+    this.setState({
+      yellowscore:tempscore
+    })
+    var scoreb = {
+      yellowscore: tempscore
+    }
+    scoreboardRef.push(scoreb);
   }
 
   greenfoul() {
+    const scoreboardRef = firebase.database().ref('scoreboard');
     var tempfoul = this.state.greenfouls;
     this.setState({
       greenfouls: tempfoul + 1
@@ -689,75 +724,110 @@ class App extends Component {
     this.setState({
       greenfoulscore: tempfoulscore
     })
+    var tempscore = this.state.outsetgreenscore + this.state.greenfoulscore;
+    this.setState({
+      greenscore:tempscore
+    })
+    var scoreb = {
+      greenscore: tempscore
+    }
+    scoreboardRef.push(scoreb);
   }
 
   redunfoul() {
     var tempfoul = this.state.redfouls;
-    if (tempfoul === 0) {
-      this.setState({})
-    }
-    else (
+    if(tempfoul-1<=0){
       this.setState({
-        redfouls: tempfoul - 1
+        redfouls:0
       })
-    );
-    tempfoul = this.state.redfouls -1;
-    console.log(tempfoul)
+    }
+    else {
+      tempfoul = this.state.redfouls -1;
+      this.setState({
+        redfouls: tempfoul
+      })
+    };
     var tempfoulscore = (Math.floor(tempfoul/3)*-10)
-    console.log(tempfoulscore)
     this.setState({
       redfoulscore: tempfoulscore
+    });
+    var tempscore = this.state.outsetredscore + this.state.redfoulscore;
+    this.setState({
+      redscore:tempscore
     })
   }
   
   yellowunfoul() {
     var tempfoul = this.state.yellowfouls;
-    if (tempfoul === 0) {
-      this.setState({})
-    }
-    else (
+    if(tempfoul-1<=0){
       this.setState({
-        yellowfouls: tempfoul - 1
+        yellowfouls:0
       })
-    );
-    tempfoul = this.state.yellowfouls -1;
-    console.log(tempfoul)
+    }
+    else {
+      tempfoul = this.state.yellowfouls -1;
+      this.setState({
+        yellowfouls: tempfoul
+      })
+    };
     var tempfoulscore = (Math.floor(tempfoul/3)*-10)
-    console.log(tempfoulscore)
     this.setState({
       yellowfoulscore: tempfoulscore
+    });
+    var tempscore = this.state.outsetyellowscore + this.state.yellowfoulscore;
+    this.setState({
+      yellowscore:tempscore
     })
   }
 
   greenunfoul() {
     var tempfoul = this.state.greenfouls;
-    if (tempfoul === 0) {
-      this.setState({})
-    }
-    else (
+    if(tempfoul-1<=0){
       this.setState({
-        greenfouls: tempfoul - 1
+        greenfouls:0
       })
-    );
-    tempfoul = this.state.greenfouls -1;
-    console.log(tempfoul)
+    }
+    else {
+      tempfoul = this.state.greenfouls -1;
+      this.setState({
+        greenfouls: tempfoul
+      })
+    };
     var tempfoulscore = (Math.floor(tempfoul/3)*-10)
-    console.log(tempfoulscore)
     this.setState({
       greenfoulscore: tempfoulscore
+    });
+    var tempscore = this.state.outsetgreenscore + this.state.greenfoulscore;
+    this.setState({
+      greenscore:tempscore
     })
   }
 
   correctguess() {
+    var tempr = this.state.outsetredscore + this.state.redfoulscore;
+    var tempy = this.state.outsetyellowscore + this.state.yellowfoulscore;
+    var tempg = this.state.outsetgreenscore + this.state.greenfoulscore
+    
     this.setState({
-      jresult: true
+      jresult: true,
+      redscore:tempr,
+      yellowscore:tempy,
+      greenscore:tempg
     })
     console.log(this.state.jresult);
   }
   incorrectguess() {
+    var tempr = this.state.outsetredscore + this.state.redfoulscore;
+    var tempy = this.state.outsetyellowscore + this.state.yellowfoulscore;
+    var tempg = this.state.outsetgreenscore + this.state.greenfoulscore
+    
     this.setState({
-      jresult: false
+      jresult: false,
+      redscore:tempr,
+      yellowscore:tempy,
+      greenscore:tempg
     })
+    console.log(this.state.jresult);
   }
   pass() {
     var tempqnumber = this.state.qnumber;
@@ -1056,16 +1126,16 @@ class App extends Component {
         <section className='scoreboard'>
           <h1> Question # {this.state.qnumber}</h1>
           <div>
-            <h3 className='scoreboard sbl'>RED TEAM: {(this.state.outsetredscore)}  - FOULS: {(this.state.redfoulscore)} = this.state.globalscoreviewsomething<br />
-              Errors: {this.state.rederror}   <button className="foulbutton button" onClick={this.redfoul}>Foul</button>: <button className="foulbutton button" onClick={this.redunfoul}>{this.state.redfouls}</button></h3>
+            <h4 className='scoreboard sbl'>RED TEAM: {(this.state.outsetredscore)}  - FOULS: {(this.state.redfoulscore)} = {(this.state.redscore)}<br />
+              Errors: {this.state.rederror}   <button className="foulbutton button" onClick={this.redfoul}>Foul</button>: <button className="foulbutton button" onClick={this.redunfoul}>{this.state.redfouls}</button></h4>
           </div>
           <div>
-            <h3 className='scoreboard sbl'>YELLOW TEAM: {this.state.outsetyellowscore}  - FOULS: {(this.state.yellowfoulscore)} = this.state.globalscoreviewsomething<br />
-              Errors: {this.state.yellowerror}   <button className="foulbutton button" onClick={this.yellowfoul}>Foul</button>: <button className="foulbutton button" onClick={this.yellowunfoul}>{this.state.yellowfouls}</button></h3>
+            <h4 className='scoreboard sbl'>YELLOW TEAM: {this.state.outsetyellowscore}  - FOULS: {(this.state.yellowfoulscore)} = {(this.state.yellowscore)}<br />
+              Errors: {this.state.yellowerror}   <button className="foulbutton button" onClick={this.yellowfoul}>Foul</button>: <button className="foulbutton button" onClick={this.yellowunfoul}>{this.state.yellowfouls}</button></h4>
           </div>
           <div>
-            <h3 className='scoreboard sbl'>GREEN TEAM: {this.state.outsetgreenscore}  - FOULS: {(this.state.greenfoulscore)} = this.state.globalscoreviewsomething<br />
-              Errors: {this.state.greenerror}   <button className="foulbutton button" onClick={this.greenfoul}>Foul</button>: <button className="foulbutton button" onClick={this.greenunfoul}>{this.state.greenfouls}</button></h3>
+            <h4 className='scoreboard sbl'>GREEN TEAM: {this.state.outsetgreenscore}  - FOULS: {(this.state.greenfoulscore)} = {(this.state.greenscore)}<br />
+              Errors: {this.state.greenerror}   <button className="foulbutton button" onClick={this.greenfoul}>Foul</button>: <button className="foulbutton button" onClick={this.greenunfoul}>{this.state.greenfouls}</button></h4>
           </div>
         </section>
         <section className='display-score'>

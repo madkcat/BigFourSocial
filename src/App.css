@@ -194,7 +194,7 @@ button {
   background-color: #FA6900;
   cursor: pointer;
   border: 0;
-  min-width: 120px;
+  min-width: 50%;
   color: #fff;
   font-size: 14px;
   box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
@@ -311,18 +311,20 @@ input:focus + .slider.greenpads {
 
 .scoreboard {
   border-radius: 5px;
-  margin-right: 50px;
   background-color: rgb(237, 237, 237);
   padding: 10px;
   box-shadow: 0 3px 4px 0 rgba(0,0,0,.14), 0 3px 3px -2px rgba(0,0,0,.12), 0 1px 8px 0 rgba(0,0,0,.2);
   min-width: 295px;
   width: 19%;
-  margin-right: auto;
-  margin-top: 0px;
-  margin-bottom: 3px;
+}
+
+.scoreboard div{
+  margin: 0px;
 }
 .sbl{
-  min-width: 180px;
+  min-width: 100%;
+  margin: 3px;
+  padding: inherit;
 }
 .scoreboard form {
   width: 90%;
@@ -482,14 +484,11 @@ input:checked + .teampads.slider:before {
 }
 
 h3.scoreboard{
-  margin-right: 50px;
   background-color: rgb(237, 237, 237);
   padding: 10px;
   box-shadow: 0 3px 4px 0 rgba(0,0,0,.14), 0 3px 3px -2px rgba(0,0,0,.12), 0 1px 8px 0 rgba(0,0,0,.2);
-  width: 90%;
-  margin-right: auto;
-  margin-top: 2px;
-  margin-bottom: 0px;
+  width: inherit;
+  margin: 3px;
 }
 
 .submitclass {
