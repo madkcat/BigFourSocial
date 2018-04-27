@@ -1,0 +1,562 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #fff;
+}
+
+header {
+  color: #fff;
+  background-color: #103D5D;
+  padding: 33px 0 25px 15px;
+}
+
+header p {
+  width: 400px;
+  margin: 0 auto;
+}
+header .wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+header h1 {
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  display: inline-block;
+  margin: 0;
+  vertical-align: middle;
+  
+}
+
+.fa {
+  font-size: 22px;
+  transform: translateY(50deg);  
+}
+
+header i {
+  vertical-align: middle;
+  margin-left: 12px;
+}
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding-top: 15px;
+}
+
+.wrapper  {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.smallcard{
+  max-width: 70px;
+  width: 100%;
+  margin: 2px;
+  float: left;
+}
+
+
+.add-score {
+  border-radius: 5px;
+  margin-right: 50px;
+  background-color: rgb(237, 237, 237);
+  padding: 15px;
+  box-shadow: 0 3px 4px 0 rgba(0,0,0,.14), 0 3px 3px -2px rgba(0,0,0,.12), 0 1px 8px 0 rgba(0,0,0,.2);
+  min-width: 295px;
+  width: 19%;
+  margin-right: auto;
+  float: auto;
+}
+
+.display-score {
+  width: 90%;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.display-score button {
+  margin-left: auto;
+  float: right;
+}
+.xelement {
+  padding: 0px
+}
+
+li.smallcard h3 {
+  height: 27px;
+}
+
+.add-score form {
+  width: 100%;
+  overflow: hidden;
+}
+
+input {
+  font-size: 18px;
+  color: #000;
+  padding: 10px 15px;
+  font-size: 16px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  margin-right: 0px;
+  margin-left: 0px;
+  border: 0;
+  display: block;
+  width: 100%;  
+}
+
+
+.padnum{
+  margin: 0px;
+}
+
+.quizzerpadnum-radio{
+  display: inline-table; 
+  width: 20%;
+  margin: 0px;
+  text-align: center;
+}
+
+.greenpads{
+  background-color: green;
+}
+
+.yellowpads{
+  background-color: yellow;
+}
+.jump-radio{
+  display: inline-table; 
+  width: 33%;
+  margin: 0px;
+  text-align: center;
+}
+
+.jresult-radio{
+  display: inline-table; 
+  width: 50%;
+  margin: 0px;
+  text-align: center;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  width: calc(20% - 50px);
+  list-style-type: none;
+  margin-right: 50px;
+  background-color: rgb(237, 237, 237);
+  color: #000;
+  margin-bottom: 30px;
+  box-shadow: 0 3px 4px 0 rgba(0,0,0,.14), 0 3px 3px -2px rgba(0,0,0,.12), 0 1px 8px 0 rgba(0,0,0,.2);
+ 
+}
+
+h2 {
+  padding: 0;
+  margin: 0;
+  font-weight: 400;
+}
+
+li h3 {
+  background-color: rgb(99, 171, 223);
+  margin: 0px;
+  color: #fff;
+  font-weight: 300;
+  padding: 0px 0px 0px 3px;
+}
+
+li h4 {
+  margin: 0;
+  font-weight: 401;
+  padding: 5px;
+}
+
+li p {
+  padding: 15px;
+}
+
+form button {
+  width: 100%;
+}
+
+button {
+  border-radius: 2px;
+  min-width: 88px;
+  background-color: #FA6900;
+  cursor: pointer;
+  border: 0;
+  min-width: 50%;
+  color: #fff;
+  font-size: 14px;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+  padding: 10px 6px;
+}
+
+.profilebutton{
+  min-width: 75px;
+  cursor: pointer;
+  background-color: initial;
+  border: 0;
+}
+
+button img{
+  border-radius: 50%;
+  bottom: 20px;
+  width: 50px;
+  height: 50px;
+  max-width: 100%;
+  cursor: pointer;
+  border: 0;
+  color: #fff;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+  background-color: none;
+}
+
+.user-profile {
+  position: fixed;
+  bottom: 20px;
+  right: 40px;
+  width: 100px;
+  height: 100px;
+}
+
+.user-profile img {
+  border-radius: 50%;
+  max-width: 100%;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+/* .switch input {display:none;} */
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: blue;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+input:checked + .slider.yellowpads {
+  background-color: yellow;
+}
+
+input:focus + .slider.yellowpads {
+  box-shadow: 0 0 1px yellow;
+}
+
+input:checked + .slider.greenpads {
+  background-color: green;
+}
+
+input:focus + .slider.greenpads {
+  box-shadow: 0 0 1px green;
+}
+
+.scoreboard {
+  border-radius: 5px;
+  margin-right: 50px;
+  background-color: rgb(237, 237, 237);
+  padding: 15px;
+  box-shadow: 0 3px 4px 0 rgba(0,0,0,.14), 0 3px 3px -2px rgba(0,0,0,.12), 0 1px 8px 0 rgba(0,0,0,.2);
+  min-width: 295px;
+  width: 19%;  
+  margin-right: auto;
+  float: auto;
+}
+
+.scoreboard h2{
+  font-weight: bold;
+  padding: 5px;
+  margin: 5px;
+}
+
+.scoreboard h4{
+  font-weight: bold;
+}
+
+.scoreboard div{
+  margin: 0px;
+}
+.sbl{
+  min-width: 100%;
+  margin: 3px;
+  padding: inherit;
+  font-size: 15px;
+}
+.scoreboard form {
+  width: 90%;
+  overflow: hidden;
+}
+
+/* --- */
+
+#jcorrect  {
+  background-color: rgb(71, 138, 71);
+  box-shadow: 0 0 1px rgb(71, 138, 71);
+}
+
+#jincorrect  {
+  background-color: rgb(255, 100, 100);
+  box-shadow: 0 0 1px rgba(255, 100, 100);
+}
+.seatnum{
+  width: 99%;
+  height: 28px;
+}
+.seatnum.slider::before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 5px;
+  bottom: 5px;
+  right: 5px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.sp1.seatnum.slider::before {
+  content: "1";
+}
+
+.sp2.seatnum.slider::before {
+  content: "2";
+}
+.sp3.seatnum.slider::before {
+  content: "3";
+}
+.sp4.seatnum.slider::before {
+  content: "4";
+}
+.sp5.seatnum.slider::before {
+  content: "5";
+}
+
+seatnum.slider.round {
+  border-radius: 28px;
+}
+
+.padnum{
+  position: absolute;
+  left: -9999px;
+  overflow: hidden;
+}
+
+
+ input:checked + .seatnum.slider:before {
+  -webkit-transform: translateX(24x);
+  -ms-transform: translateX(24px);
+  transform: translateX(24px);
+}
+
+.quizzerpadnum-radio-div .switch{
+  position: relative;
+  display: inline-block;
+  width: 20%;
+}
+
+.jresult-radio{
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 34px;
+}
+
+.switch{
+  width: 100%;
+}
+
+input:checked + .jres.slider:before {
+  -webkit-transform: translateX(184px);
+  -ms-transform: translateX(184px);
+  transform: translateX(184px);
+}
+
+/* The slider */
+.redpads.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: red;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.redpads.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+input:checked + .slider.redpads {
+  background-color: red;
+}
+
+input:focus + .slider.redpads {
+  box-shadow: 0 0 1px red;
+}
+
+.quizzerpad-radio{
+  display: inline-table; 
+  width: 33%;
+  margin: 0px;
+  text-align: center;
+}
+
+.quizzerpad-radio-div .switch{
+  width: 33%;
+  margin-top: 4px;
+}
+.redpads{
+  background-color: red;
+  width: 100%;
+}
+
+.yellowpads{
+  background-color: yellow;
+  width: 100%;
+}
+
+.greenpads{
+  background-color: green;
+  width: 100%;
+}
+
+.teamcolor{
+  position: absolute;
+  left: -9999px;
+  overflow: hidden;
+}
+
+input:checked + .teampads.slider:before {
+  -webkit-transform: translateX(55px);
+  -ms-transform: translateX(55px);
+  transform: translateX(55px);
+}
+
+.quizzerpadnum-radio-div label.switch{
+  margin: 0px;
+}
+
+.foulbutton.button{
+  border-radius: 2px;
+  min-width: 88px;
+  background-color: #FA6900;
+  cursor: pointer;
+  border: 0;
+  min-width: 40px;
+  color: #fff;
+  font-size: 14px;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+  padding: 2px 1px;
+}
+
+h3.scoreboard{
+  background-color: rgb(237, 237, 237);
+  padding: 10px;
+  box-shadow: 0 3px 4px 0 rgba(0,0,0,.14), 0 3px 3px -2px rgba(0,0,0,.12), 0 1px 8px 0 rgba(0,0,0,.2);
+  width: inherit;
+  margin: 3px;
+}
+
+.submitclass {
+  width: 100%;
+}
+.submitclass button{
+  width: 45%;
+  min-width: 50%;
+}
+.submitclass button.correctbutton{
+  width: 45%;
+  background-color: green;
+  color: #fff;
+  font-size: 14px;
+}
+
+.submitclass button.incorrectbutton{
+  width: 45%;
+  background-color: red;
+  color: #fff;
+  font-size: 14px;
+}
+
+button.xelement{
+  border-radius: 2px;
+  height: 27px;
+  min-width: 0px;
+  max-width: 50%;
+  background-color: red;
+  cursor: pointer;
+  border: 0;
+  min-width: 0px;
+  color: #fff;
+  font-size: 14px;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+  padding: 4px 6px 4px 6px;
+}
+
+.loginbutton{
+  min-width: 15%;
+}
