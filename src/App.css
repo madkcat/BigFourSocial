@@ -118,8 +118,6 @@ input {
   text-align: center;
 }
 
-
-
 .greenpads{
   background-color: green;
 }
@@ -318,6 +316,14 @@ input:focus + .slider.greenpads {
   width: 19%;
 }
 
+.scoreboard h2{
+  font-weight: bold;
+}
+
+.scoreboard h4{
+  font-weight: bold;
+}
+
 .scoreboard div{
   margin: 0px;
 }
@@ -325,6 +331,7 @@ input:focus + .slider.greenpads {
   min-width: 100%;
   margin: 3px;
   padding: inherit;
+  font-size: 15px;
 }
 .scoreboard form {
   width: 90%;
@@ -371,9 +378,9 @@ seatnum.slider.round {
 
 
  input:checked + .seatnum.slider:before {
-  -webkit-transform: translateX(17px);
-  -ms-transform: translateX(17px);
-  transform: translateX(17px);
+  -webkit-transform: translateX(24x);
+  -ms-transform: translateX(24px);
+  transform: translateX(24px);
 }
 
 .quizzerpadnum-radio-div .switch{
@@ -465,9 +472,9 @@ input:focus + .slider.redpads {
 }
 
 input:checked + .teampads.slider:before {
-  -webkit-transform: translateX(37px);
-  -ms-transform: translateX(37px);
-  transform: translateX(37px);
+  -webkit-transform: translateX(55px);
+  -ms-transform: translateX(55px);
+  transform: translateX(55px);
 }
 
 .foulbutton.button{
@@ -524,4 +531,8 @@ button.xelement{
   font-size: 14px;
   box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
   padding: 4px 6px 4px 6px;
+}
+
+.loginbutton{
+  min-width: 15%;
 }
