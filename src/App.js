@@ -6,6 +6,9 @@ import firebase, { auth, provider } from './firebase.js';
 // import { UIPad } from './components/uipad.js';
 
 class App extends Component {
+=======
+class App extends Component {  
+>>>>>>> parent of 377c7d6... sync no change
   constructor() {
     super();
     this.state = {
