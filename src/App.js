@@ -5,7 +5,7 @@ import firebase, { auth, provider } from './firebase.js';
 // import { UIPad } from './components/uipad';
 // import { UIPad } from './components/uipad.js';
 
-class App extends Component {  
+class App extends Component { 
   constructor() {
     super();
     this.state = {
