@@ -64,9 +64,11 @@ FirebaseApi.initAuth()
         });
       }
     })
+    
   .catch(
     error => {
       store.dispatch(ajaxCallError());
       console.error('error while initializing Firebase Auth'); // eslint-disable-line no-console
       console.error(error); // eslint-disable-line no-console
     });
+
