@@ -6,18 +6,6 @@ import firebase, { auth, provider } from './firebase.js';
 // import { UIPad } from './components/uipad.js';
 
 class App extends Component {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-class App extends Component {  
->>>>>>> parent of 377c7d6... sync no change
-=======
->>>>>>> parent of 225074a... Final Alpha Commit
-=======
->>>>>>> parent of 225074a... Final Alpha Commit
-=======
->>>>>>> parent of 225074a... Final Alpha Commit
   constructor() {
     super();
     this.state = {
@@ -970,19 +958,7 @@ class App extends Component {
                 }
               </div>
               :
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
               <button className="loginbutton" onClick={this.login}>Log In</button>
-=======
-              <button onClick={this.login}>Log In</button>
->>>>>>> parent of 225074a... Final Alpha Commit
-=======
-              <button onClick={this.login}>Log In</button>
->>>>>>> parent of 225074a... Final Alpha Commit
-=======
-              <button onClick={this.login}>Log In</button>
->>>>>>> parent of 225074a... Final Alpha Commit
             }
           </div>
         </header>
@@ -1148,19 +1124,7 @@ class App extends Component {
                   </div>
           </section> */}
         <section className='scoreboard'>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
           <h2> Question # {this.state.qnumber}</h2>
-=======
-          <h1> Question # {this.state.qnumber}</h1>
->>>>>>> parent of 225074a... Final Alpha Commit
-=======
-          <h1> Question # {this.state.qnumber}</h1>
->>>>>>> parent of 225074a... Final Alpha Commit
-=======
-          <h1> Question # {this.state.qnumber}</h1>
->>>>>>> parent of 225074a... Final Alpha Commit
           <div>
             <h4 className='scoreboard sbl'>RED TEAM: {(this.state.outsetredscore)}  - FOULS: {(this.state.redfoulscore)} = {(this.state.redscore)}<br />
               Errors: {this.state.rederror}   <button className="foulbutton button" onClick={this.redfoul}>Foul</button>: <button className="foulbutton button" onClick={this.redunfoul}>{this.state.redfouls}</button></h4>
@@ -1178,9 +1142,6 @@ class App extends Component {
             <div className="wrapper">
               <ul>
                 {this.state.scorecard.map((score) => {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
                   if (score.user === this.state.user.displayName || score.user === this.state.user.email){
                     return (
                       <li className='smallcard' key={score.id}>
@@ -1194,12 +1155,6 @@ class App extends Component {
                         <h4>{score.jumptype}</h4>  
                       </li>
                     )}
-                  
-=======
-=======
->>>>>>> parent of 225074a... Final Alpha Commit
-=======
->>>>>>> parent of 225074a... Final Alpha Commit
                 return (
                   <li className='smallcard' key={score.id}>
                     {score.jresult === true ?
@@ -1212,13 +1167,6 @@ class App extends Component {
                     <h4>{score.jumptype}</h4>  
                   </li>
                 )
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 225074a... Final Alpha Commit
-=======
->>>>>>> parent of 225074a... Final Alpha Commit
-=======
->>>>>>> parent of 225074a... Final Alpha Commit
                 })}
               </ul>
             </div>
