@@ -1,54 +1,22 @@
-Colorado Invitational Quiz Pad (bettername to be Determined)
 
-v.01 - Basic Firebase integration and wireframe- pre-initial commit
+## Placeholder
+    
 
-v.02 - radio implementaion of scorebuttons, get post integration
-basic quizzing logic integrated
+## Desktop View
 
-v.03 - 
-advanced quizzing logic
-automatically handles jumptype(regular/tossup/free) with associated point value return
-asynchronus update of score
-scores submitted as correct or incorrect only
-improved UI to sliders for mobile application
-placeholder for user profiles
-added databse logic diagram
-public.DatabseFlowChart.jpg
+![Desktop View](placeholder)
 
-bugs/feedback recieved:
-integrate paypal donation button
-scoreboard is too parceled and doesn't look nice
-add number to whitespace in slider, to make it easier to see which seat is jumping
-lock out team color when jumping on an error[mvp requirement]
-provide ability to modify individual pushes, incase of opperator error or challange[mvp requirement]
---requires rolling back qnumber and updating scoreboard
-integrate chat function
-lacks ability to reduce fouls[mvp requirement]
-doesn't count 3 fouls as an error[mvp requirement]
-make scoreboard visible to unregistered users[mvp requirement]
-track individual quizzers errors[mvp requirement]
---required to track quiz out and error our, also global stat rankings
+## Tablet View
 
-v.04 - next "update"
-lock out team color when jumping on an error[mvp requirement]
-lacks ability to reduce fouls[mvp requirement]
-doesn't count 3 fouls as an error[mvp requirement]
-do not allow 'negative' fouls'
-clean up scoreboard
+![Tablet View](placeholder)
 
-bugs/feedback recieved:
-integrate paypal donation button
-add number to whitespace in slider, to make it easier to see which seat is jumping
-integrate chat function
+## Mobile View
 
-Requested features
-provide ability to modify individual pushes, incase of opperator error or challenge/appeal[mvp requirement]
---requires rolling back qnumber and updating scoreboard
-make scoreboard visible to unregistered users[mvp requirement]
-track individual quizzers errors[mvp requirement]
-modify remove button to edit user errors and responsive rollback[mvp requirement]
---required to track quiz out and error our, also global stat rankings
-user profile page[mvp requirement]
-coach page
-church page
-team page[mvp requirement?]
+![Mobile View](placeholder)
+
+## Mobile Menu
+
+![Mobile View](placeholder)
+
+
+
