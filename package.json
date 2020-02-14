@@ -15,10 +15,10 @@
     "react-scripts": "^3.3.0"
   },
   "scripts": {
-    "start": "react-scripts -a start",
-    "build": "react-scripts -a build",
-    "test": "react-scripts -a test",
-    "eject": "react-scripts -a eject"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
