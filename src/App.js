@@ -9,7 +9,7 @@
 import React, { Component } from 'react';
 import firebase, { auth, provider } from './firebase.js';
 import './App.css';
-// import './media-query.css';
+import './media-query.css';
 import HeaderWrapper from './HeaderWrapper.js';
 import DesktopView from './DesktopView';
 import ScorekeeperView from './ScorekeeperDesktopView';
