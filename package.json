@@ -3,11 +3,14 @@
   "version": "0.5.0",
   "description": "Scoreboard application for AACS Style Bible Quizzing",
   "main": "index.js",
+  "engines": {
+    "node": "8.8.0"
+  },
   "homepage": "https://placeholder",
   "dependencies": {
     "@material-ui/core": "^3.7.1",
     "css-loader": "^3.4.2",
-    "node": "^13.8.0",
+    "node": "8.8.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-firebase-file-uploader": "^2.4.2",
