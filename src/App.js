@@ -40,7 +40,6 @@ class App extends Component {
         };
         
         this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
         this.login = this.login.bind(this);
         this.logout = this.logout.bind(this);
         this.profilein = this.profilein.bind(this);
@@ -145,29 +144,6 @@ class App extends Component {
         this.setState({[e.target.name]: e.target.value});
     }
 
-
-    // Function to handle new scorecard
-    handleSubmit(e) {
-        e.preventDefault();
-        const itemsRef = firebase.database().ref('items');
-
-        const item = {
-            title: this.state.TourneyIDItem,
-            user: this.state.user.displayName || this.state.user.email,
-            description: this.state.QuizRoomItem,
-            photo: this.state.ScoreImgURL,
-            layout: this.state.gridSheetURL
-        };
-        itemsRef.push(item);
-        this.setState({
-            TourneyIDItem: '',
-            username: '',
-            QuizRoomItem: '',
-            photo: '',
-            layout: ''
-        });
-    }
-
     // Function For removing sheets
     removeItem(itemId) {
         const itemRef = firebase.database().ref(`/items/${itemId}`);
@@ -222,7 +198,7 @@ class App extends Component {
                 /* Desktop Layout for Scorecard Entry */
                 <section className = "add-item">
                     <DesktopView 
-                        handleSubmit = {this.handleSubmit}
+                        handleSubmit = {this.handleStartQuizSubmit}
                         handleChange = {this.handleChange}
                         TourneyIDItem = {this.state.TourneyIDItem}
                         QuizRoomItem = {this.state.QuizRoomItem}
