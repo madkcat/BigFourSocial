@@ -6,8 +6,9 @@
 // @ts-check
 
 import React from 'react';
-import './App.css';
 import './media-query.css';
+import './App.css';
+
 
 const LoggedOutView = (props) => {
     return (

@@ -6,9 +6,10 @@
 
 import React from 'react';
 import firebase, { auth, provider } from './firebase.js';
+import './media-query.css';
 import './App.css';
 import './ScorekeeperDesktopView.css';
-import './media-query.css';
+
 import CustomUploadButton from 'react-firebase-file-uploader/lib/CustomUploadButton';
 
 
@@ -1121,11 +1122,11 @@ incorrectguess() {
       return (      
         <div className='app'>
           {this.state.user ?
-            <div className='keepscoreprofile'>
+            <div className='keepscoreprofile '>
               {(this.state.pageset === 'scorekeeper') ?
-                <button className='keepscorebutton' onClick={this.keepscoreout}>Return</button>
+                <button className='mobilekeepscorebutton keepscorebutton' onClick={this.keepscoreout}>Return</button>
               :
-                <button className='keepscorebutton' onClick={this.keepscorein}>Keep Score</button>
+                <button className='mobilekeepscorebutton keepscorebutton' onClick={this.keepscorein}>Keep Score</button>
               }
               {(this.state.pageset === 'profile') ?
               

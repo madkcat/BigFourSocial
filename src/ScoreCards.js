@@ -6,8 +6,8 @@
 
 import React, { Component } from 'react';
 import firebase, { auth, provider } from './firebase.js';
+import './media-query.css';
 import './App.css';
-// import './media-query.css';
 import ModalImage from 'react-modal-image'
 import App from './App.js';
 import handleScore from './App.js';
