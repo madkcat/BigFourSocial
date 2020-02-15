@@ -8,7 +8,7 @@
 
 import React from 'react';
 import './App.css';
-import './media-query.css';
+// import './media-query.css';
 import firebase, { auth, provider } from './firebase.js';
 import ScorekeeperView from './ScorekeeperDesktopView'
 

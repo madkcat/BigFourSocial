@@ -7,7 +7,7 @@
 import React from 'react';
 import firebase from './firebase.js';
 import './App.css';
-import './media-query.css';
+// import './media-query.css';
 import CustomUploadButton from 'react-firebase-file-uploader/lib/CustomUploadButton';
 import Drawer from '@material-ui/core/Drawer';
 import Divider from '@material-ui/core/Divider';

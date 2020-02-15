@@ -8,7 +8,7 @@ import React from 'react';
 import firebase, { auth, provider } from './firebase.js';
 import './App.css';
 import './ScorekeeperDesktopView.css';
-import './media-query.css';
+// import './media-query.css';
 import CustomUploadButton from 'react-firebase-file-uploader/lib/CustomUploadButton';
 
 

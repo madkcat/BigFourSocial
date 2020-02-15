@@ -9,7 +9,7 @@
 import React, { Component } from 'react';
 import firebase, { auth, provider } from './firebase.js';
 import './App.css';
-import './media-query.css';
+// import './media-query.css';
 import HeaderWrapper from './HeaderWrapper.js';
 import DesktopView from './DesktopView';
 import ScorekeeperView from './ScorekeeperDesktopView';
@@ -237,42 +237,13 @@ class App extends Component {
 
                 {/* Mobile menu for Scorecard entry*/}
                 
-                    <MobileView
-                        handleSubmit = {this.handleSubmit}
-                        handleChange = {this.handleChange}
-                        TourneyIDItem = {this.state.TourneyIDItem}
-                        QuizRoomItem = {this.state.QuizRoomItem}
-                        handleUploadStart = {this.handleUploadStart}
-                        handleUploadError = {this.handleUploadError}
-                        handleProgress = {this.handleProgress}
-                        handleImgUpload = {this.handleImgUpload}
-                        handleUploadSuccess = {this.handleUploadSuccess}
-                        handleUploadSuccessgridSheet = {this.handleUploadSuccessgridSheet}
-                        user = {this.state.user}
-                        left = {this.state.left}
-                        toggleDrawer = {this.toggleDrawer}
-                    />
+                    
                 </section>;
 
             } else {
                 topboxview =
 
                 <section>
-                    <MobileView
-                        handleSubmit = {this.handleSubmit}
-                        handleChange = {this.handleChange}
-                        TourneyIDItem = {this.state.TourneyIDItem}
-                        QuizRoomItem = {this.state.QuizRoomItem}
-                        handleUploadStart = {this.handleUploadStart}
-                        handleUploadError = {this.handleUploadError}
-                        handleProgress = {this.handleProgress}
-                        handleImgUpload = {this.handleImgUpload}
-                        handleUploadSuccess = {this.handleUploadSuccess}
-                        handleUploadSuccessgridSheet = {this.handleUploadSuccessgridSheet}
-                        user = {this.state.user}
-                        left = {this.state.left}
-                        toggleDrawer = {this.toggleDrawer}
-                    />
                 </section>;
 
             }

@@ -7,7 +7,7 @@
 
 import React from 'react';
 import './App.css';
-import './media-query.css';
+// import './media-query.css';
 
 const LoggedOutView = (props) => {
     return (
