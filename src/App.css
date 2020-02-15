@@ -50,12 +50,6 @@ header i {
   margin-left: 12px;
 }
 
-#mobileMenu {
-  position: fixed;
-  margin-left: 9.5%;
-  top: 63px;
-  width: 90%;
-}
 
 .user-profile {
   position: fixed;
@@ -73,22 +67,9 @@ header i {
   height: 100px;
 }
 
-#mobileUserName {
-  position: fixed;
-  bottom: -40px;
-  left: 160px;
-  width: 200px;
-  height: 100px;
-}
-
 .user-profile img {
   border-radius: 50%;
   max-width: 100%;
-}
-
-#mobileDivide {
-margin-top: 25px;
-border: 1px solid;
 }
 
 /* Add a new Quiz Box */
@@ -118,44 +99,12 @@ border: 1px solid;
   background-color: black;
 }
 
-#mobileStartScoreText {
-  margin-top: 30px;
-  margin-bottom: 40px;
-  margin-left: 70px;
-}
-
-#mobileTourneyIDNameField {
-  display: block;
-  margin-bottom: 5px;
-  border-color: black;
-}
-
-#mobileQuizRoomField {
-    display: block;
-    margin-bottom: 7px;
-}
-
 .addButton {
   max-width: 27%;
   margin: 5px 5px;
   width: 25%;
   min-width: 45%;  
 }
-
-.mobileAddButton {
-  font-size: 18px;
-  height: 40px;
-  margin-top: 5px;
-  margin-left: 20px;
-  width: 260px;
-}
-
-.mobileTourneyIDNameField {
-  display: block;
-  margin-bottom: 5px;
-}
-
-
 
 .display-item {
   width: 75%;
