@@ -35,7 +35,7 @@ class ScorekeeperView extends React.Component {
             greenid: '',
             
             colorjump: [],
-            score: null,
+            score: '',
 
             qnumber: 1,
             teamcolor: null,
