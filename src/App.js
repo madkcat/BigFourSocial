@@ -233,10 +233,10 @@ class App extends Component {
                         handleUploadSuccess = {this.handleUploadSuccess}
                         handleUploadSuccessgridSheet = {this.handleUploadSuccessgridSheet}
                     />
-                </section>
+                
 
                 {/* Mobile menu for Scorecard entry*/}
-                <section>
+                
                     <MobileView
                         handleSubmit = {this.handleSubmit}
                         handleChange = {this.handleChange}

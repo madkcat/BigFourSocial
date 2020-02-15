@@ -1,18 +1,19 @@
 {
   "name": "bible-quizzing-scorekeeper",
-  "version": "0.1.0",
-  "engines": {
-    "node": "8.8.0"
-  },
-  "private": true,
+  "version": "0.5.0",
+  "description": "Scoreboard application for AACS Style Bible Quizzing",
+  "main": "index.js",
   "homepage": "https://placeholder",
   "dependencies": {
     "@material-ui/core": "^3.7.1",
+    "css-loader": "^3.4.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-firebase-file-uploader": "^2.4.2",
     "react-modal-image": "^2.3.1",
-    "react-scripts": "^3.3.0"
+    "react-scripts": "3.0.1",
+    "script-loader": "^0.7.2",
+    "style-loader": "^1.1.3"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -29,6 +30,12 @@
     "not ie <= 11",
     "not op_mini all"
   ],
+  "repository": {
+    "type": "git",
+    "url": "WIP"
+  },
+  "author": "madkcat",
+  "license": "ISC",
   "devDependencies": {
     "firebase": "^5.7.0"
   }

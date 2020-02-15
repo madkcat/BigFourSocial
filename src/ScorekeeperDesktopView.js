@@ -1106,7 +1106,7 @@ incorrectguess() {
             <button onClick={this.profilein} className="profilebutton"> <img src={this.state.user.photoURL} alt="UserGooglePhoto" /></button>
           }
         </div>}
-    else null;
+    else profileIO = null;
         
       return (      
         <div className='app'>
