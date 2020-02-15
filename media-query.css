@@ -5,7 +5,6 @@
 
 /* Media Query above 1200 px */
 
-@media only screen and (min-width: 1200px) {
 
     #mobileMenu {
       display: none;
@@ -53,7 +52,7 @@
     #back-button-out-mobile {
       display: none;
     } 
-  }
+  
   
   /* Media query below 1200 px */
   
